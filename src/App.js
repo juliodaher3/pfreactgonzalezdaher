@@ -3,12 +3,19 @@ import "./App.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 import { db } from "./firebase/firebaseConfig";
+import { collection, query, where, getDocs } from "firebase/firestore";
+const q = query(collection(db, "chinpokomon"))
+
+
 
 // COMPONENTS
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
 import CardUser from "./components/CardUser/CardUser";
 import Button from "./components/Button/Button";
+
+
+
 
 class App extends Component {
   render() {
