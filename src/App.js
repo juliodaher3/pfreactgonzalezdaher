@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
+import { db } from "./firebase/firebaseConfig";
+
 // COMPONENTS
 import Header from "./components/Header/Header";
 import NavBar from "./components/NavBar/NavBar";
