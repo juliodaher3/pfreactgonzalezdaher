@@ -4,6 +4,7 @@
 
 .UserSection {
 	display: flex;
+  flex-direction: row;
 	justify-content: space-evenly;
   margin-top: 20px;
   margin-bottom: 20px;

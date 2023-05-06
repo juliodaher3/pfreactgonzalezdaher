@@ -1,5 +1,13 @@
 import React, { Component } from "react";
 import "./App.css";
+
+// COMPONENTS
+import Header from "./components/Header/Header";
+import NavBar from "./components/NavBar/NavBar";
+import CardUser from "./components/CardUser/CardUser";
+import Button from "./components/Button/Button";
+
+
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 import { db } from "./firebase/firebaseConfig";
@@ -8,11 +16,7 @@ const q = query(collection(db, "chinpokomon"))
 
 
 
-// COMPONENTS
-import Header from "./components/Header/Header";
-import NavBar from "./components/NavBar/NavBar";
-import CardUser from "./components/CardUser/CardUser";
-import Button from "./components/Button/Button";
+
 
 
 
@@ -31,9 +35,6 @@ class App extends Component {
             img="https://ih1.redbubble.net/image.1455301172.5828/st,small,507x507-pad,600x600,f8f8f8.jpg"
             backgroundColor="yellow"
           />
-        </div>
-
-        <div className="UserSection">
           <CardUser
             name="Chu-Chu Nezumi"
             
@@ -41,9 +42,9 @@ class App extends Component {
             img="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3d1fae55-1b80-4bf5-b8a4-acb458a92dfd/dbhc96i-7e127c1a-a656-45df-a375-23cfe8ee74fd.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzNkMWZhZTU1LTFiODAtNGJmNS1iOGE0LWFjYjQ1OGE5MmRmZFwvZGJoYzk2aS03ZTEyN2MxYS1hNjU2LTQ1ZGYtYTM3NS0yM2NmZThlZTc0ZmQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.6t6gBgyMGQ-aJ9DKMfV_wefzOM9MwGPsREliz_mLU4Q"
             backgroundColor="yellow"
           />
-        </div>
 
-        <div className="UserSection">
+
+
           <CardUser
             name="Lambtron"
             
