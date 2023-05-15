@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, } from "react";
 import { useParams } from "react-router-dom";
 
-// FIRBASE - FIRESTORE
-import { collection, query, getDocs, where } from "firebase/firestore";
+
+import { collection, query, getDocs, where, } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
 
 import CardChinpokomonComponent from "../../components/CardChinpokomonComponent/CardChinpokomonComponent";
 
-// COMPONENTS
 
 const ChinpokomonType = () => {
   const [chinpokomonData, setChinpokomonData] = useState([]);
@@ -21,12 +20,12 @@ console.log(ChinpokomonType);
       const q = query(collection(db, "chinpokomon"), where("type", "==", type));
       const docs = [];
       const querySnapshot = await getDocs(q);
-      // console.log('DATA:', querySnapshot);
+      
       querySnapshot.forEach((doc) => {
-        // console.log('DATA:', doc.data(), 'ID:', doc.id);
+        
         docs.push({ ...doc.data(), id: doc.id });
       });
-      // console.log(docs);
+      
       setChinpokomonData(docs);
     };
     getChinpokomons();

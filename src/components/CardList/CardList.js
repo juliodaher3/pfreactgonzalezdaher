@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import "./CardList.css";
 import Spinner from "../Spinner/Spinner";
 
-import { collection, query, getDocs } from "firebase/firestore";
+import { collection, query, getDocs, } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
 
 const CardList = () => {

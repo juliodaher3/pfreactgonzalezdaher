@@ -4,11 +4,11 @@ export const ItemsContext = createContext();
 
 const initialState = () => [
 	{
-		
+		id: 45454, 
 		name: 'Lambtron',
 		desc: 'Rashitos',
 		price: 4,
-		// types: electrico,
+		type: 'electrico',
 	},
 ];
 

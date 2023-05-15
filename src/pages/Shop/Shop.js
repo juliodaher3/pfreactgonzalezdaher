@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import CatchingPokemonIcon from '@mui/icons-material/CatchingPokemon';
 
-// Firebase
+
+
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebaseConfig";
 
@@ -26,7 +26,7 @@ const initialState = {
 
 const Shop = () => {
   const [values, setValues] = useState(initialState);
-  // Este estado está destinado a guardar el id de la compra
+  
   const [purchaseID, setPurchaseID] = useState("");
 
   const onChange = (e) => {
@@ -36,11 +36,11 @@ const Shop = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    // Add a new document with a generated id.
+    
     const docRef = await addDoc(collection(db, "purchases"), {
       values,
     });
-    // console.log("Document written with ID: ", docRef.id);
+    
     setPurchaseID(docRef.id);
     setValues(initialState);
   };

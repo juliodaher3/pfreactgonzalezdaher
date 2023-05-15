@@ -5,6 +5,8 @@ import MenuItem from "@mui/material/MenuItem";
 
 import { Link } from "react-router-dom";
 
+
+
 const MenuTypes = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -27,7 +29,7 @@ const MenuTypes = () => {
       textTransform: "uppercase",
     },
     link: {
-      color: "red",
+      color: "black",
       fontSize: 18,
       textDecoration: "none",
     },
@@ -55,27 +57,27 @@ const MenuTypes = () => {
         }}
       >
         <MenuItem>
-          <Link to="/Types/normal" style={styles.link}>
+          <Link to="/Type/normal" style={styles.link}>
             Normal
           </Link>
         </MenuItem>
         <MenuItem>
-          <Link to="/Types/electrico" style={styles.link}>
+          <Link to="/type/electrico" style={styles.link}>
             Electrico
           </Link>
         </MenuItem>
         <MenuItem>
-          <Link to="/Types/agua" style={styles.link}>
+          <Link to="/Type/agua" style={styles.link}>
             Agua
           </Link>
         </MenuItem>
         <MenuItem>
-          <Link to="/Types/fuego" style={styles.link}>
+          <Link to="/Type/fuego" style={styles.link}>
             Fuego
           </Link>
         </MenuItem>
         <MenuItem>
-          <Link to="/Types/veneno" style={styles.link}>
+          <Link to="/Type/veneno" style={styles.link}>
             Veneno
           </Link>
         </MenuItem>
