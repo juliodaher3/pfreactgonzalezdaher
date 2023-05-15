@@ -1,12 +1,14 @@
-import React from 'react'
+import React from 'react';
+import CardList from '../../components/CardList/CardList';
+import './Home.css';
 
-const home = () => {
-  return (
-    <div>home</div>
+const Home = () => {
+	return (
+		<div className='HomeContainer'>
+			<CardList />
+		</div>
+	);
+};
 
-  )
-}
-
-export default home
-
+export default Home;
 

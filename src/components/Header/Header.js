@@ -1,17 +1,18 @@
-import React from "react";
-import "./Header.css";
-import img from "./logo.png";
+import React from 'react';
+import './Header.css';
 
-const Header = (props) => {
-  // console.log(props);
-  return (
-    <div className="Header">
-      <img src={img} alt="logo chinpokomon" />
-      <h1>{props.title}</h1>
-      
-      <h2>{props.subTitle}</h2>
-    </div>
-  );
+import { Link } from 'react-router-dom';
+
+import img from './chinpokologo.webp';
+
+const Header = () => {
+	return (
+		<div className='header-container'>
+			<Link to='/'>
+				<img src={img} alt='logo-chinpokomon' width='150' />
+			</Link>
+		</div>
+	);
 };
 
 export default Header;
