@@ -13,24 +13,28 @@ const ChinpokomonType = () => {
 
   let { type } = useParams();
 
-console.log(ChinpokomonType);
-
   useEffect(() => {
     const getChinpokomons = async () => {
-      const q = query(collection(db, "chinpokomon"), where("type", "==", type));
+
+      let typeAux= type.slice(0,1).toUpperCase() + type.slice(1);
+      const q = query(collection(db, "chinpokomon"), where("type", "==", typeAux));
+      // console.log(q)
       const docs = [];
       const querySnapshot = await getDocs(q);
-      
+
+      console.log(querySnapshot)
+
       querySnapshot.forEach((doc) => {
-        
+        console.log(doc)
+
         docs.push({ ...doc.data(), id: doc.id });
       });
-      
+
       setChinpokomonData(docs);
     };
     getChinpokomons();
   }, [type]);
-
+  console.log("data: " + chinpokomonData)
   return (
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
