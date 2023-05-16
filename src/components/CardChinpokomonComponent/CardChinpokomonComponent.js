@@ -4,8 +4,22 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import CardActionArea from "@mui/material/CardActionArea";
+import { ItemsContext } from "../../context/ItemsContext"
 
 const CardChinpokomonComponent = ({ chinpokomonsData }) => {
+
+  const [items, setItems] = React.useContext(ItemsContext)
+
+  console.log(chinpokomonsData)
+  console.log(items)
+
+  const agregarAlCarrito = () => {
+    let itemsAux = items;
+    itemsAux.push(chinpokomonsData);
+    setItems(itemsAux);
+    console.log(items)
+  }
+
   return (
     <Card sx={{ maxWidth: 345, m: 4 }}>
       <CardActionArea>
@@ -21,7 +35,7 @@ const CardChinpokomonComponent = ({ chinpokomonsData }) => {
           <Typography variant="body2" color="text.secondary">
             $ {chinpokomonsData.price} | stock: {chinpokomonsData.stock}
           </Typography>
-          
+          <button onClick={() => agregarAlCarrito()}>Agregar al carrito</button>
         </CardContent>
       </CardActionArea>
     </Card>

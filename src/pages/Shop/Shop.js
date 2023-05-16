@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { ItemsContext } from '../../context/ItemsContext'
+import CardChinpokomonComponent from "../../components/CardChinpokomonComponent/CardChinpokomonComponent";
 
 
 
@@ -25,6 +27,7 @@ const initialState = {
 };
 
 const Shop = () => {
+  const [items] = useContext(ItemsContext)
   const [values, setValues] = useState(initialState);
   
   const [purchaseID, setPurchaseID] = useState("");
@@ -48,6 +51,14 @@ const Shop = () => {
   return (
     <div style={styles.containerShop}>
       <h1>TIENDA</h1>
+      <div
+      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
+      <h1>Chinpokomon por tipos</h1>
+      {items.map((data) => {
+        return <CardChinpokomonComponent chinpokomonsData={data} key={data.id} />;
+      })}
+    </div>
       <form className="FormContainer" onSubmit={onSubmit}>
         <TextField
           placeholder="Name"
